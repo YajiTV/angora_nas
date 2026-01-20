@@ -13,7 +13,7 @@ type ProductRow = RowDataPacket & {
   description: string | null;
   price_cents: number;
   image_url: string | null;
-  category: "homme" | "femme" | "accessoires";
+  category: "femme" | "accessoires";
   is_active: 0 | 1;
 };
 
