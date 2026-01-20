@@ -13,7 +13,7 @@ type ProductRow = RowDataPacket & {
   description: string | null;
   price_cents: number;
   image_url: string | null;
-  category: "femme" | "accessoires";
+  category: "homme" | "femme" | "accessoires";
   is_active: 0 | 1;
 };
 
@@ -102,23 +102,22 @@ export default async function FemmePage() {
                 key={p.id}
                 className="overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm hover:shadow-md transition"
               >
-                <div className="aspect-4/5 w-full bg-neutral-100">
-                  {p.image_url ? (
-                    <div className="relative h-full w-full">
-                      <Image
-                        src={p.image_url}
-                        alt={p.name}
-                        fill
-                        className="object-cover"
-                        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                      />
-                    </div>
-                  ) : (
-                    <div className="flex h-full w-full items-center justify-center text-sm text-neutral-500">
-                      Pas d’image
-                    </div>
-                  )}
-                </div>
+                <div className="relative aspect-[4/5] w-full bg-neutral-100">
+  {p.image_url ? (
+    <Image
+      src={p.image_url}
+      alt={p.name}
+      fill
+      className="object-cover"
+      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+    />
+  ) : (
+    <div className="flex h-full w-full items-center justify-center text-sm text-neutral-500">
+      Pas d’image
+    </div>
+  )}
+</div>
+
 
                 <div className="p-4">
                   <h2 className="text-base font-semibold text-neutral-900">{p.name}</h2>
