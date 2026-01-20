@@ -33,7 +33,7 @@ export default async function FemmePage() {
     category,
     isactive   AS is_active
   FROM products
-  WHERE category = 'homme' AND isactive = 1
+  WHERE category = 'femme' AND isactive = 1
   ORDER BY id DESC
   `
 );
